@@ -1,37 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corona virus map</title>
+
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        #map{
-            width: 100vw;
-            height: 100vh;
-        }    
+      body {
+        margin: 0;
+      }
+      #map {
+        width: 100vw;
+        height: 100vh;
+      }
     </style>
-
-    <title>Corona Virus COVID-19 Map</title>
-</head>
-<body>
-    <div id='map'></div>    
-</body>
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
-
-<script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZ3JhY2VrZWFuZSIsImEiOiJja2hmMXZic2MwbGNwMzVsNjVtZ3B1bXpiIn0.sA3v-R0YTud3qMVCET5Q2A';
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v10',
-    zoom: 1,
-  });
-</script>
-
-
-<script src="index.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="module" src="app.js"></script>
+  </body>
 </html>
