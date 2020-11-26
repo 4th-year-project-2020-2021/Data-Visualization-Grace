@@ -34,8 +34,6 @@ const getColorFromCount = count => {
 fetch("/data.json")
   .then(response => response.json())
   .then(data => {
-    // const places = data.places;
-    // const reports = data.reports;
     const { places, reports } = data;
 
     reports

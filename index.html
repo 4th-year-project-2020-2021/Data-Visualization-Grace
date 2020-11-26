@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Corona virus map</title>
+    <title>COVID-19 Map</title>
 
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css"
@@ -12,15 +12,50 @@
     <style>
       body {
         margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        color: aliceblue;
       }
       #map {
         width: 100vw;
         height: 100vh;
+      }
+      section{
+        padding: 0 100px;
+        background: url(bg.jpg);
+        height: 100vh;
+        display: flex;
+        align-items: right;
+      }
+      #box{
+        position: relative;
+        max-width: 600px;
+        padding: 50px;
+        background: rgba(255, 255, 255,.2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      }
+      #box h2{
+        margin: 0 0 20px;
+        padding: 0;
+        font-size: 48px;
+        text-transform: uppercase;
+        color: #044463;
+      }
+      #box p{
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
       }
     </style>
   </head>
   <body>
     <div id="map"></div>
     <script type="module" src="app.js"></script>
+
+    <div id="box">
+      <section>
+      <h1>My index to assign pins with associated case number</h1>
+      </section>
+    </div>
   </body>
 </html>
