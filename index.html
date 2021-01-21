@@ -14,22 +14,46 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        color: aliceblue;
       }
+
       #map {
         width: 100vw;
         height: 100vh;
       }
+
+      .map-overlay {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        position: absolute;
+        width: 350px;
+        top: 0;
+        left: 0;
+        padding: 10px;
+      }
+
+      .map-overlay .map-overlay-inner {
+        background-color: rgba(151, 151, 151, 0.651);
+        box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
   <body>
-    <div id="map"></div>
-    <script type="module" src="app.js"></script>
 
-    <div id="box">
-      <section>
-      <h1>My index to assign pins with associated case number</h1>
-      </section>
-    </div>
+  <div id="map"></div>
+
+    <div class="map-overlay top">
+      <div class="map-overlay-inner">
+
+        <h3> Map Grid </h3>
+        <h4>Red pin: >= 50 & < 100 COVID-19 Cases</h4>
+        <h4>Green pin: >= 10 & < 50 COVID-19 Cases</h4>
+        <h4>Blue pin: >= 1 & < 10 COVID-19 Cases</h4>
+        <h4>Grey pin: No cases</h4>
+      </div>
+    </div>     
+    
+    <script type="module" src="app.js"></script>
   </body>
 </html>
