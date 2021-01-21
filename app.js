@@ -13,7 +13,8 @@ var map = new mapboxgl.Map({
   // Map set to dark mode
   style: "mapbox://styles/mapbox/dark-v10",
   zoom: 1.5,
-  center: [0, 20]
+  center: [0, 20],
+  id: "points"
 });
 
 // Assigning differant color markers with number of cases
@@ -56,4 +57,17 @@ fetch("/data.json")
           .setLngLat([currentPlace.longitude, currentPlace.latitude])
           .addTo(map);
       });
+  });
+
+  map.on('click', e =>{
+    const result = map.queryRenderedFeatures(e.point, {reports: ['marker']})
+    if(result.length){
+      const popup = new mapboxgl.Popup({closeButton: false});
+      console.log(result)
+      const content = result[0].properties.name;
+      popup.setLngLat(e.lngLat)
+      .setHTML('<h3>${content}</h3>')
+      .addTo(map);
+    }
+    console.log('click', e.lngLat);
   });
